@@ -6,7 +6,9 @@ namespace ConsoleApplication
     {
         public static void Main()
         {
-            Console.WriteLine("Hello, world!");
+            var greeting = "Welcome back";
+            var name = "Agent Cooper";
+            Console.WriteLine($"{greeting}, {name}!");
         }
     }
 }
