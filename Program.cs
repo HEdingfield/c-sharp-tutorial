@@ -19,7 +19,7 @@ namespace ConsoleApplication
             return output;
         }
 
-        public static void Main()
+        public static void string_tests()
         {
             var greeting = "Welcome back";
             var name = "Agent Cooper";
@@ -34,6 +34,11 @@ namespace ConsoleApplication
             Console.WriteLine(speak(greeting, name, "loud"));
             Console.WriteLine(speak(greeting, name, "quiet"));
             Console.WriteLine(speak(greeting, name, "dumb"));
+        }
+
+        public static void Main()
+        {
+            string_tests();
         }
     }
 }
