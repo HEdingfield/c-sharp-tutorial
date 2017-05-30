@@ -36,8 +36,11 @@ namespace ConsoleApplication
             Console.WriteLine(speak(greeting, name, "dumb"));
         }
 
-        public static void days_old(DateTime birthday)
+        public static void days_old()
         {
+            Console.WriteLine("On which date were you born?");
+            var birthday_input = Console.ReadLine();
+            DateTime birthday = DateTime.Parse(birthday_input);
             TimeSpan days_old = DateTime.Now - birthday;
             // NOTE: Casting from double to int is done as below
             Console.WriteLine($"You are {(int)days_old.TotalDays} days old.");
@@ -66,7 +69,7 @@ namespace ConsoleApplication
             TimeSpan duration = nextYear - DateTime.Today;
             Console.WriteLine($"There are {duration.TotalDays} days left in the year.");
 
-            days_old(someMoment);
+            days_old();
         }
 
         public static void Main()
