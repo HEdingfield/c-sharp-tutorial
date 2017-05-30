@@ -72,10 +72,33 @@ namespace ConsoleApplication
             days_old();
         }
 
+        public static void guessing_game()
+        {
+            int correctNumber = new Random().Next(4);
+
+            Console.WriteLine("Guess a number from 1 to 3:");
+            int guessedNumber = int.Parse(Console.ReadLine());
+
+            if (guessedNumber < 1 || guessedNumber > 3)
+            {
+                Console.WriteLine("You must guess a number from 1 to 3.");
+            }
+            else if (guessedNumber == correctNumber)
+            {
+                Console.WriteLine("Correct!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, your guess was incorrect.");
+            }
+        }
+
         public static void Main()
         {
-            string_tests();
-            datetime_tests();
+            // Comment out functions as needed
+            // string_tests();
+            // datetime_tests();
+            guessing_game();
         }
     }
 }
