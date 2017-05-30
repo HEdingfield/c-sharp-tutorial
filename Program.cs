@@ -36,9 +36,43 @@ namespace ConsoleApplication
             Console.WriteLine(speak(greeting, name, "dumb"));
         }
 
+        public static void days_old(DateTime birthday)
+        {
+            TimeSpan days_old = DateTime.Now - birthday;
+            // NOTE: Casting from double to int is done as below
+            Console.WriteLine($"You are {(int)days_old.TotalDays} days old.");
+            double days_to_next_anniversary = 10000 - (days_old.TotalDays % 10000);
+            Console.WriteLine($"It's {(int)days_to_next_anniversary} days until your next 10000 day anniversary.");
+        }
+
+        public static void datetime_tests()
+        {
+            var currentTime = DateTime.Now;
+            var today = DateTime.Today;
+            var someDate = new DateTime(2017,3,29);
+            var someMoment = new DateTime(1984,3,29,21,11,0);
+            var yesterday = DateTime.Today.AddDays(-1);
+            var someDay = DateTime.Parse("1/1/2017");
+            
+            Console.WriteLine($"currentTime = {currentTime}");
+            Console.WriteLine($"today = {today}");
+            Console.WriteLine($"someDate = {someDate}");
+            Console.WriteLine($"someMoment = {someMoment}");
+            Console.WriteLine($"yesterday = {yesterday}");
+            Console.WriteLine($"someDay = {someDay}");
+            Console.WriteLine($"someMoment.Hour = {someMoment.Hour}");
+
+            DateTime nextYear = new DateTime(DateTime.Today.Year + 1, 1, 1);
+            TimeSpan duration = nextYear - DateTime.Today;
+            Console.WriteLine($"There are {duration.TotalDays} days left in the year.");
+
+            days_old(someMoment);
+        }
+
         public static void Main()
         {
             string_tests();
+            datetime_tests();
         }
     }
 }
